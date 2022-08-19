@@ -7,5 +7,10 @@
             "email": "16673178+mohamedsabrymohamed@users.noreply.github.com"
         }
     ],
+    "autoload": {
+        "psr-4": {
+            "App\\": "app/"
+        }
+    },
     "require": {}
 }
