@@ -32,6 +32,7 @@ class Router {
                 break;
         }
 
-        echo $response;
+        return $response;
     }
+
 }

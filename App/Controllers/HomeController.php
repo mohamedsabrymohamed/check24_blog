@@ -2,10 +2,14 @@
 
 namespace App\Controllers;
 
+use App\DB\Database;
+use Exception;
+use PDO;
+
 class HomeController {
 
-    public function index()
+    public static function index()
     {
-        return 'Home';
+
     }
 }
