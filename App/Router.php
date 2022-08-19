@@ -8,7 +8,7 @@ use App\Controllers\PostsController;
 class Router {
 
     /**
-     * @return int|void
+     * @return string|void
      */
     public static function getController()
     {
@@ -32,7 +32,7 @@ class Router {
                 break;
         }
 
-        return $response;
+        echo $response;
     }
 
 }
