@@ -44,6 +44,11 @@ class Database {
         return self::$instance;
     }
 
+    /**
+     * @param String $query
+     * @return array|false
+     * @throws CustomException
+     */
     public static function executeSelectQuery (String $query)
     {
         try {
@@ -61,6 +66,12 @@ class Database {
         }
     }
 
+    /**
+     * @param String $tableName
+     * @param array $data
+     * @return void
+     * @throws CustomException
+     */
     private static function executeInsertQuery(String $tableName, array $data)
     {
         if(count($data)>0)
@@ -105,7 +116,12 @@ class Database {
         }
     }
 
-
+    /**
+     * @param String $tableName
+     * @param String $currentPage
+     * @return bool
+     * @throws CustomException
+     */
     public static function selectQueryPaginated(String $tableName, String $currentPage)
     {
         try {
