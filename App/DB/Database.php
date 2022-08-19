@@ -2,7 +2,7 @@
 
 namespace App\DB;
 
-use App\Router;
+use App\Exceptions\CustomException;
 use Exception;
 use PDO;
 
@@ -26,8 +26,9 @@ class Database {
                 self::$instance->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_SILENT);
                 self::$instance->query('SET CHARACTER SET utf8');
 
-            } catch(Exception $error) {
-                throw new Exception("Error Connecting DB");
+            } catch(CustomException $error) {
+
+                throw new CustomException("Error Connecting DB");
             }
 
         }
