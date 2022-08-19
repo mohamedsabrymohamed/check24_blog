@@ -2,6 +2,7 @@
 
 namespace App;
 
+use App\Controllers\HomeController;
 use App\Controllers\PostsController;
 
 class Router {
@@ -13,10 +14,15 @@ class Router {
     {
 
         $requestURI = $_SERVER['REQUEST_URI'];
-        $currentPath = substr($requestURI, 0, strpos($requestURI, "check24_blog"));
+        $currentPath = substr($requestURI, strpos($requestURI, "/check24_blog") + 13);
         $response = '';
+
         switch ($currentPath) {
             case '/' :
+                $controller = new HomeController();
+                $response = $controller->index();
+                break;
+            case '/overview' :
                 $controller = new PostsController();
                 $response = $controller->index();
                 break;
@@ -25,6 +31,7 @@ class Router {
                 require_once __DIR__ . '/../views/404.php';
                 break;
         }
-        return $response;
+
+        echo $response;
     }
 }
