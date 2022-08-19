@@ -2,10 +2,22 @@
 
 namespace App\Controllers;
 
+use App\DB\PostModel;
+use App\DTO\PostCollectionTransfer;
+use App\Helpers\RenderViews;
+
 class PostsController {
 
-    public static function index()
+
+    /**
+     * @return void
+     * @throws \App\Exceptions\CustomException
+     */
+    public  function overview() : void
     {
-        return 'Posts';
+        $postCollectionTransfer = (new PostModel())->paginate();
+        RenderViews::render(__DIR__ . '/../../views/overview.php', (array)$postCollectionTransfer);
     }
+
+
 }

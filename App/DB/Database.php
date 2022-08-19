@@ -26,7 +26,7 @@ class Database {
                 "db_host" => "localhost",
                 "db_port" => "3306",
                 "db_user" => "root",
-                "db_pass" => "asdasd",
+                "db_pass" => "",
                 "db_name" => "check24_blog");
 
             try {
@@ -122,7 +122,7 @@ class Database {
      * @return bool
      * @throws CustomException
      */
-    public static function selectQueryPaginated(String $tableName, String $currentPage)
+    public static function selectQueryPaginated(String $tableName, int $currentPage)
     {
         try {
         $limit = 3;
@@ -140,9 +140,17 @@ class Database {
 
 
         $startingLimit = ($page-1)*$limit;
-        $returnQuery  = "SELECT * FROM " . $tableName . " ORDER BY id DESC LIMIT ?,?";
+        $returnQuery  = "SELECT * FROM " . $tableName . " ORDER BY id DESC LIMIT " . $startingLimit . ", ".$limit;
         $result = $db->prepare($returnQuery);
-        return $result->execute([$startingLimit, $limit]);
+        $result->execute();
+        $paginatedData = $result->fetchAll(PDO::FETCH_ASSOC);
+        $retrunedData = array(
+            'data' => $paginatedData,
+            'total_pages' => $totalPages,
+            'current_page' => $page
+        );
+
+        return $retrunedData;
         } catch(CustomException $error) {
             throw new CustomException("Error Executing Query");
         }
