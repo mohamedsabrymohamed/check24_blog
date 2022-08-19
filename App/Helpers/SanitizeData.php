@@ -4,7 +4,11 @@ namespace App\Helpers;
 
 class SanitizeData {
 
-    public function cleanData($data)
+    /**
+     * @param $data
+     * @return string
+     */
+    public function cleanData(string $data)
     {
         $data = htmlspecialchars($data);
         $data = stripslashes($data);

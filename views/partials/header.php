@@ -13,10 +13,15 @@
     <div class="container">
         <div class="row align-items-start">
             <div class="col-1">
-                <img src="https://via.placeholder.com/90 " alt="logo">
+                <a href="overview">
+                    <img src="https://via.placeholder.com/90 " alt="logo">
+                </a>
+
             </div>
             <div class="col-8 text-left">
+                <a href="overview">
                 <b class="d-block mt-5">Check24 Blog</b>
+                </a>
             </div>
         </div>
         <nav class="navbar navbar-expand-lg bg-light">
@@ -24,10 +29,13 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                         <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="#">Home</a>
+                            <a class="nav-link active" aria-current="page" href="overview">Overview</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Link</a>
+                            <a class="nav-link" href="newpost">New Post</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="imprint">Imprint</a>
                         </li>
                     </ul>
                     <div class="d-flex">

@@ -19,12 +19,12 @@ class Router {
 
         switch ($currentPath) {
             case '/' :
-                $controller = new HomeController();
-                $response = $controller->index();
+                $controller = new PostsController();
+                $response = $controller->overview();
                 break;
             case '/overview' :
                 $controller = new PostsController();
-                $response = $controller->index();
+                $response = $controller->overview();
                 break;
             default:
                 http_response_code(404);
@@ -32,7 +32,7 @@ class Router {
                 break;
         }
 
-        echo $response;
+        return $response;
     }
 
 }
