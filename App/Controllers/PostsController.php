@@ -6,6 +6,6 @@ class PostsController {
 
     public function index()
     {
-        return 1;
+        return 'sdfsdfsdf post';
     }
 }
