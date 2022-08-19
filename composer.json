@@ -1,0 +1,11 @@
+{
+    "name": "pc/check24_blog",
+    "description": "Check24 Blog Task",
+    "authors": [
+        {
+            "name": "Mohamed Sabry",
+            "email": "16673178+mohamedsabrymohamed@users.noreply.github.com"
+        }
+    ],
+    "require": {}
+}
